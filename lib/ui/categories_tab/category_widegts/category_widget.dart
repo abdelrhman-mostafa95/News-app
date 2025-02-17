@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app_cruze/ui/categories_tab/category_data/category_item.dart';
 
@@ -11,7 +10,6 @@ class CategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // margin: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
       decoration: BoxDecoration(
           color: catItem.background,
           borderRadius: BorderRadius.only(
@@ -31,7 +29,8 @@ class CategoryWidget extends StatelessWidget {
           ),
           Text(
             catItem.title,
-            style: TextStyle(fontWeight: FontWeight.w400, fontSize: 22),
+            style: TextStyle(
+                fontWeight: FontWeight.w400, fontSize: 22, color: Colors.white),
           )
         ],
       ),

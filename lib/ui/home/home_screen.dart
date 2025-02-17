@@ -8,6 +8,7 @@ import 'package:news_app_cruze/utils/image_path.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = '/home';
+  List<CategoryItem> allCategories = CategoryItem.getCategoryList();
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();

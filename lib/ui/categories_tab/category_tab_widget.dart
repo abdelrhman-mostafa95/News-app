@@ -12,26 +12,29 @@ class CategoryTabWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          'Pick your category \nof interest',
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
-        ),
-        Expanded(
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, crossAxisSpacing: 12, mainAxisSpacing: 12),
-            itemBuilder: (context, index) => InkWell(
-                onTap: () {
-                  clickedCategory(allCategories[index]);
-                },
-                child: CategoryWidget(
-                    catItem: allCategories[index], index: index)),
-            itemCount: allCategories.length,
+    return Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: Column(
+        children: [
+          Text(
+            'Pick your category \nof interest',
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
           ),
-        )
-      ],
+          Expanded(
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, crossAxisSpacing: 12, mainAxisSpacing: 12),
+              itemBuilder: (context, index) => InkWell(
+                  onTap: () {
+                    clickedCategory(allCategories[index]);
+                  },
+                  child: CategoryWidget(
+                      catItem: allCategories[index], index: index)),
+              itemCount: allCategories.length,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

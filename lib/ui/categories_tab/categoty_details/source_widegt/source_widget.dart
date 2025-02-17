@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app_cruze/api_manager/Sources.dart';
+import 'package:news_app_cruze/api_manager/model/sources_model/Sources.dart';
 
 class SourceWidget extends StatelessWidget {
   Sources source;
