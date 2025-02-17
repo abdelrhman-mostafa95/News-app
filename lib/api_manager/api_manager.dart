@@ -26,4 +26,18 @@ class ApiManager {
     var newsResponse = NewsResponse.fromJson(json);
     return newsResponse;
   }
+
+  static Future<NewsResponse> getHomeNews() async {
+    var url = Uri.http(baseUrl, 'v2/everything/', {
+      'apiKey': '7eb1696871c74e83bb961a5ecbf46e38',
+      'pageSize': 5.toString(),
+      'sortBy': 'popularity',
+      'page': 1.toString(),
+      'sources': 'wired'
+    });
+    var response = await http.get(url);
+    var json = jsonDecode(response.body);
+    var newsResponse = NewsResponse.fromJson(json);
+    return newsResponse;
+  }
 }

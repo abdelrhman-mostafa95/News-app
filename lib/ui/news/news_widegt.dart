@@ -5,14 +5,14 @@ import 'package:news_app_cruze/api_manager/model/sources_model/Sources.dart';
 import 'package:news_app_cruze/ui/news/news_item.dart';
 
 class NewsWidegt extends StatelessWidget {
-  Sources sources;
+  Sources? sources;
 
   NewsWidegt({required this.sources});
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<NewsResponse>(
-      future: ApiManager.getNews(sources.id!),
+      future: ApiManager.getNews(sources!.id!),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(

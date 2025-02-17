@@ -10,29 +10,18 @@ class CategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(vertical: 15, horizontal: 5),
+      padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
       decoration: BoxDecoration(
-          color: catItem.background,
-          borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(index.isEven ? 0 : 50),
-            bottomLeft: Radius.circular(index.isEven ? 50 : 0),
-            topLeft: Radius.circular(50),
-            topRight: Radius.circular(50),
-          )),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            catItem.imagePath,
-            width: 130,
-            height: 115,
-          ),
-          Text(
-            catItem.title,
-            style: TextStyle(
-                fontWeight: FontWeight.w400, fontSize: 22, color: Colors.white),
-          )
-        ],
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(width: 2, color: Colors.green),
+      ),
+      child: Text(
+        catItem.title ?? '',
+        style: TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: 15,
+        ),
       ),
     );
   }
